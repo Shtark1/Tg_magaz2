@@ -21,7 +21,7 @@ from telegram_bot.utils import StatesUsers
 from cfg.database import Database
 
 
-db = Database('/home/str/Tg_magaz2/cfg/database')
+db = Database('cfg/database')
 
 
 async def start_bot(dp):
@@ -625,9 +625,6 @@ if __name__ == '__main__':
 
     for idx, token in enumerate(tokens):
         if idx != 0:
-            try:
-                bot_init(event_loop, token)
-            except:
-                ...
+            bot_init(event_loop, token)
 
     event_loop.run_forever()
