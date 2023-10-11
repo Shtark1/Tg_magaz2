@@ -625,6 +625,9 @@ if __name__ == '__main__':
 
     for idx, token in enumerate(tokens):
         if idx != 0:
-            bot_init(event_loop, token)
+            try:
+                bot_init(event_loop, token)
+            except:
+                ...
 
     event_loop.run_forever()
