@@ -279,10 +279,10 @@ async def all_wallets(message: Message):
 async def all_users_reg(message: Message):
     ADMIN_ID = db.get_all_info("ADMIN_ID")[0]
     if str(message.from_user.id) in str(ADMIN_ID):
-        write_to_excel_all_users(db.get_all_data(), "все_пользователи.xlsx")
-        with open("все_пользователи.xlsx", 'rb') as file:
+        write_to_excel_all_users(db.get_all_data(), "all_user.xlsx")
+        with open("all_user.xlsx", 'rb') as file:
             await bot.send_document(message.from_user.id, file, reply_markup=BUTTON_TYPES["BTN_HOME_ADMIN"])
-        os.remove("все_пользователи.xlsx")
+        os.remove("all_user.xlsx")
     else:
         await bot.send_message(chat_id=message.from_user.id, text=MESSAGES["not_command"])
 
