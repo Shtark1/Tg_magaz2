@@ -94,7 +94,7 @@ def bot_init(event_loop, token):
                 text = f"<b>🏠 Город: {all_info_products[1]}\n🎁 Товар: {info_product[0]}," \
                        f"\n💰 Цена: {info_product[1][:-1]}.</b>\n➖➖➖➖\nВыберите район:"
                 for idx, district_info in enumerate(all_info_products[3].split("|")):
-                    if id_city_item[2] == district_info[-2]:
+                    if id_city_item[2] == district_info.split("[")[1][0:-1]:
                         text += f"\n➖➖➖➖\n🏃 Район: <b>{district_info[:-3]}</b>\n[Для выбора нажмите 👉 /district_{id_city_item[1]}_{id_city_item[2]}_{idx} ]"
                     # else:
                     #     text += "Товар закончился"
