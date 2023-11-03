@@ -21,3 +21,6 @@ class StatesMal(Helper):
 
     STAT_0 = ListItem()
     STAT_1 = ListItem()
+    STAT_2 = ListItem()
+    STAT_3 = ListItem()
+    
